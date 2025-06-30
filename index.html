@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="estilos.css">
+	<script src="script.js"></script>
+
+</head>
+<body>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const inputs = ["fnom", "lappat", "lapmat"];
+    
+    inputs.forEach(id => {
+      const input = document.getElementById(id);
+      input.addEventListener("input", function () {
+        this.value = this.value.toUpperCase();
+      });
+    });
+  });
+
+  function validarformulario(){
+  let x = document.forms["registro"]["nombre"].value;
+  if (x == ""){
+  	alert("favor de escribir su nombe");
+  	document.getElementById("fnom").focus();
+  	return false;
+  	 }
+  }
+
+  function validarformulario(){
+  	let x = document.forms["registro"]["nombre"].value;
+  	if (x == ""){
+  		alert("favor de escribir su nombe");
+  		document.getElementById("lappat").focus();
+  		return false;
+  	}
+  }
+</script>
+
+	<main>
+        <img src="C:\Users\avila\OneDrive\Documentos\u-erre\t2.2\imagenes\logo.png" alt="">
+        <h1>Registro de Datos</h1>  
+        <form name="registro" action="" onsubmit="return validarformulario()">
+    		<label for="ledad">Clave</label>
+        <input type="number" id="lclave" name="clave" placeholder="clave de empleado..">
+
+        <label for="fnom">Nombre</label>
+    		<input type="text" id="fnom" name="nombre" placeholder="Escriba su nombre..">
+
+    		<label for="lappat">Apellido Paterno</label>
+    		<input type="text" id="lappat" name="appat" placeholder="Apellido paterno..">
+
+    		<label for="lappat">Apellido Materno</label>
+    		<input type="text" id="lapmat" name="apmat" placeholder="Apellido materno..">
+        
+    		<input type="submit" value="Submit">
+  		</form>		
+	</main>
+
+  
+
+</body>
+</html>
